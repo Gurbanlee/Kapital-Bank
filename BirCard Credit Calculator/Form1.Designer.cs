@@ -40,14 +40,14 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblDateDiff = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblPay = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCash = new System.Windows.Forms.Label();
-            this.lblPay = new System.Windows.Forms.Label();
-            this.lblDateDiff = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCash)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,7 +66,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 110);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox1
             // 
@@ -78,7 +77,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nağdlaşdırılan məbləğ:";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // nudCash
             // 
@@ -101,7 +99,6 @@
             0,
             0,
             0});
-            this.nudCash.ValueChanged += new System.EventHandler(this.nudCash_ValueChanged);
             // 
             // groupBox2
             // 
@@ -113,7 +110,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nağdlaşdırılan tarix:";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dpCashDate
             // 
@@ -126,7 +122,6 @@
             this.dpCashDate.Size = new System.Drawing.Size(121, 26);
             this.dpCashDate.TabIndex = 0;
             this.dpCashDate.Value = new System.DateTime(2020, 2, 6, 11, 37, 13, 0);
-            this.dpCashDate.ValueChanged += new System.EventHandler(this.dpCashDate_ValueChanged);
             // 
             // groupBox3
             // 
@@ -138,7 +133,6 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ödənilən tarix tarix:";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dtPayDate
             // 
@@ -151,7 +145,6 @@
             this.dtPayDate.Size = new System.Drawing.Size(121, 26);
             this.dtPayDate.TabIndex = 0;
             this.dtPayDate.Value = new System.DateTime(2020, 2, 6, 11, 37, 13, 0);
-            this.dtPayDate.ValueChanged += new System.EventHandler(this.dtPayDate_ValueChanged);
             // 
             // btnCalculate
             // 
@@ -206,23 +199,41 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(199, 22);
+            this.label5.Location = new System.Drawing.Point(202, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 18);
             this.label5.TabIndex = 7;
             this.label5.Text = "AZN";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lblDateDiff
+            // 
+            this.lblDateDiff.AutoSize = true;
+            this.lblDateDiff.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateDiff.ForeColor = System.Drawing.Color.Black;
+            this.lblDateDiff.Location = new System.Drawing.Point(172, 40);
+            this.lblDateDiff.Name = "lblDateDiff";
+            this.lblDateDiff.Size = new System.Drawing.Size(0, 18);
+            this.lblDateDiff.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(199, 58);
+            this.label4.Location = new System.Drawing.Point(202, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "AZN";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lblPay
+            // 
+            this.lblPay.AutoSize = true;
+            this.lblPay.BackColor = System.Drawing.Color.Transparent;
+            this.lblPay.ForeColor = System.Drawing.Color.Black;
+            this.lblPay.Location = new System.Drawing.Point(172, 58);
+            this.lblPay.Name = "lblPay";
+            this.lblPay.Size = new System.Drawing.Size(0, 18);
+            this.lblPay.TabIndex = 4;
             // 
             // label6
             // 
@@ -233,18 +244,26 @@
             this.label6.Size = new System.Drawing.Size(124, 18);
             this.label6.TabIndex = 3;
             this.label6.Text = "Ödənilməli məbləğ:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(199, 40);
+            this.label3.Location = new System.Drawing.Point(202, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "gün sonra";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblCash
+            // 
+            this.lblCash.AutoSize = true;
+            this.lblCash.BackColor = System.Drawing.Color.Transparent;
+            this.lblCash.ForeColor = System.Drawing.Color.Black;
+            this.lblCash.Location = new System.Drawing.Point(172, 22);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(0, 18);
+            this.lblCash.TabIndex = 1;
             // 
             // label2
             // 
@@ -255,7 +274,6 @@
             this.label2.Size = new System.Drawing.Size(87, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ödəmə vaxtı:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -266,37 +284,6 @@
             this.label1.Size = new System.Drawing.Size(149, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nağdlaşdırılan məbləğ:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblCash
-            // 
-            this.lblCash.AutoSize = true;
-            this.lblCash.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCash.Location = new System.Drawing.Point(172, 22);
-            this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(0, 18);
-            this.lblCash.TabIndex = 1;
-            this.lblCash.Click += new System.EventHandler(this.lblCash_Click);
-            // 
-            // lblPay
-            // 
-            this.lblPay.AutoSize = true;
-            this.lblPay.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPay.Location = new System.Drawing.Point(172, 58);
-            this.lblPay.Name = "lblPay";
-            this.lblPay.Size = new System.Drawing.Size(0, 18);
-            this.lblPay.TabIndex = 4;
-            this.lblPay.Click += new System.EventHandler(this.lblPay_Click);
-            // 
-            // lblDateDiff
-            // 
-            this.lblDateDiff.AutoSize = true;
-            this.lblDateDiff.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDateDiff.Location = new System.Drawing.Point(172, 40);
-            this.lblDateDiff.Name = "lblDateDiff";
-            this.lblDateDiff.Size = new System.Drawing.Size(0, 18);
-            this.lblDateDiff.TabIndex = 6;
-            this.lblDateDiff.Click += new System.EventHandler(this.lblDateDiff_Click);
             // 
             // BirCard
             // 
