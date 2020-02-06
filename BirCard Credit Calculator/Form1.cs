@@ -15,8 +15,13 @@ namespace BirCard_Credit_Calculator
             var cash = nudCash.Value;
             var startDate = dpCashDate.Value;
             var endDate = dtPayDate.Value;
-            double diffDate = -1*(startDate - endDate).TotalDays;
-            lblDateDiff.Text = Convert.ToInt32(diffDate).ToString();
+            double diffDate = Convert.ToInt32(-1 * (startDate - endDate).TotalDays);
+            lblDateDiff.Text = diffDate.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            nudCash.Value = 2;
         }
     }
 }
